@@ -26,4 +26,45 @@ int main()
 		printf("++++++++++++++++++++++++++\n");
 		pn[i]=i+1;
 	}
+for (i=0;i<n;i++)
+	{
+		ptr=i;
+		
+		for (j=i+1;j<n;j++)
+		{
+			if(priority[j]<priority[ptr])
+			{
+				ptr=j;
+			}
+		}
+		
+		c=priority[i];
+		priority[i]=priority[ptr];
+		priority[ptr]=c;
+		
+		c=bt[i];
+		bt[i]=bt[ptr];
+		bt[ptr]=c;
+		
+		c=pn[i];
+		
+		pn[i]=pn[ptr];
+		pn[ptr]=c;
+		
+	}
+	    wt[0]=0;  
+	      for(i=1;i<n;i++)
+	      {
+	      	wt[i]=0;
+	      	for(j=0;j<i;j++)
+	      	{
+	      		wt[i] = wt[i]+bt[j];
+			}
+            
+			z = z+wt[i];
+			
+		  }
+	
+	
+	avgtime=z/n;
 
