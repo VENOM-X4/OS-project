@@ -67,4 +67,26 @@ for (i=0;i<n;i++)
 	
 	
 	avgtime=z/n;
+	fflush(stdin);
+	printf("__________________________________________________________________________________________________\n");
+    	printf("|  PROCESS   |  ARRAIVAL TIME  |  BURST TIME  |  WAITING TIME  |  PRIORITY  |  TURN AROUND TIME  | \n");
+	
+	for (i=0;i<n;i++)
+	{
+		tat[i]=bt[i]+wt[i];
+		printf("|    %03d     |        %03d      |      %03d     |    %03d     |     %03d    |         %03d        | \n",pn[i],at[i],bt[i],wt,pn[i],tat[i]);
+		sum= sum+tat[i];
+		
+	}
+	printf("__________________________________________________________________________________________________\n");
+
+	
+	int avgtatime= sum/n;
+	printf("______________________________________");
+	printf("\n|  AVERAGE WAIT TIME        : %03d  |",avgtime);
+	printf("\n|  AVERAGE TURNAROUND TIME  : %03d  |",avgtatime);
+	printf("\n____________________________________");
+
+}
+
 
